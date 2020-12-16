@@ -1,29 +1,41 @@
 import Sequelize from 'sequelize';
-
+import mongoose from 'mongoose';
 //MODELS
 import BlogUser from '../app/models/BlogUser';
-//import Post from '../app/models/Post';
-//import Category from '../app/models/Category
+import File from '../app/models/File';
+import BlogPosts from '../app/models/BlogPosts';
+import BlogCategories from '../app/models/BlogCategories';
 
 
 //CONFIG DATABASE
-import databaseConig from '../config/database';
-
-const models = [BlogUser];
+import databaseConfig from '../config/database';
+const models = [BlogUser, File, BlogPosts, BlogCategories];
 
 class Database {
 
     constructor() {
 
         this.init();
+        this.mongo();
     }
 
-    init() {
+    init(){
+        
+        this.connection = new Sequelize(databaseConfig);
+        //console.log(this.connection.models);
+        console.log(this.connection.models);
+        models
+            .map(model => model.init(this.connection))
+            .map(model => model.associate && model.associate(this.connection.models));
+    }
 
-        this.connection = new Sequelize(databaseConig);
+    mongo(){
 
-        models.map(model => model.init(this.connection));
-
+        
+        this.mongoConnection = mongoose.connect(
+            'mongodb://192.168.99.100:27017/mongoblog',
+            {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }
+        )
     }
 
 }
