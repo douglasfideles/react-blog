@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken'
 import * as Yup from 'yup';
 
-
+import File from '../models/File';
 import authConfig from '../../config/auth';
 import BlogUser from '../models/BlogUser';
 
@@ -24,8 +24,18 @@ class SessionController{
 
         }
 
+        const bloguser = await BlogUser.findOne({
 
-        const bloguser = await BlogUser.findOne({where: {user_login}});
+            where: {user_login},
+            include: [
+                {
+                    model: File,
+                    as: 'avatar',
+                    attributes: ['id', 'path', 'url']
+                }
+            ]
+        
+        });
 
         if(!bloguser){
 
@@ -39,13 +49,14 @@ class SessionController{
 
         }
 
-        const {id, display_name, user_email} = bloguser;
+        const {id, display_name, user_email, avatar} = bloguser;
 
         return res.json({
             bloguser: {
                 id,
                 display_name,
-                user_email
+                user_email,
+                avatar
             },
 
             token: jwt.sign({id}, authConfig.secret, {

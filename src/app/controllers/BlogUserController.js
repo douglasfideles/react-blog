@@ -3,6 +3,9 @@ import * as Yup from 'yup';
 import BlogUser from '../models/BlogUser';
 import File from '../models/File';
 import Mail from '../../lib/Mail';
+import RegisterMail from '../jobs/RegisterMail';
+import Queue from '../../lib/Queue';
+
 
 class BlogUserControlle{
 
@@ -33,12 +36,17 @@ class BlogUserControlle{
 
         const {id, user_login, display_name, user_email, user_status} = await BlogUser.create(req.body);
         
-        await Mail.sendMail({
+        /*await Mail.sendMail({
             to: `${user_email}`,
             subject: 'Cadastro feito',
-            text: 'Cadastro feito com sucesso',
+            template: 'welcome',
+            context: {
+                user_login: user_login,
+            }
             
-        });
+        });*/
+
+        await Queue.add(RegisterMail.key, {user_login});
 
         return res.json({id, user_login, display_name, user_email, user_status});
 
@@ -78,16 +86,26 @@ class BlogUserControlle{
 
         }
             
-        const {id} = await bloguser.update(req.body);
+        await bloguser.update(req.body);
+
+        const {id, avatar} = await BlogUser.findByPk(req.userId, {
+            include: [
+                {
+                    model: File,
+                    as: 'avatar',
+                    attributes: ['id', 'path', 'url'],
+                }
+            ]
+        });
         
-        return res.json({id, user_login, display_name, user_email});
+        return res.json({id, user_login, display_name, user_email, avatar});
 
     }
 
     async index(req, res){
 
         const bloguser = await BlogUser.findAll({
-            attributes: ['id', 'user_login', 'display_name', 'user_email', 'avatar_id'],
+            attributes: ['id', 'user_login', 'display_name', 'user_email', 'user_status', 'avatar_id'],
             include: [{
                 model: File,
                 as: 'avatar',

@@ -1,7 +1,11 @@
 import {Router} from 'express';
 import multer from 'multer';
+import Brute from 'express-brute';
+import BruteRedis from 'express-brute-redis';
+
 
 import multerConfig from './config/multer';
+import redisConfig from './config/redis';
 import BlogUserController from './app/controllers/BlogUserController';
 import SessionController from './app/controllers/SessionController';
 import authMiddleware from './app/middlewares/auth';
@@ -12,9 +16,11 @@ import NotificationController from './app/controllers/NotificationController';
 
 const upload = multer(multerConfig);
 const routes = new Router();
+const bruteStore = new BruteRedis(redisConfig);
+const bruteForce = new Brute(bruteStore);
 
 routes.post('/users', BlogUserController.store);
-routes.post('/sessions', SessionController.store);
+routes.post('/sessions', bruteForce.prevent, SessionController.store);
 
 routes.use(authMiddleware);
 routes.put('/users', BlogUserController.update);
