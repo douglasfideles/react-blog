@@ -2,9 +2,9 @@ import * as Yup from 'yup';
 
 import BlogUser from '../models/BlogUser';
 import File from '../models/File';
-import Mail from '../../lib/Mail';
 import RegisterMail from '../jobs/RegisterMail';
 import Queue from '../../lib/Queue';
+import UserInfos from '../models/UserInfos';
 
 
 class BlogUserControlle{
@@ -105,11 +105,16 @@ class BlogUserControlle{
     async index(req, res){
 
         const bloguser = await BlogUser.findAll({
-            attributes: ['id', 'user_login', 'display_name', 'user_email', 'user_status', 'avatar_id'],
+            attributes: ['id', 'user_login', 'display_name', 'user_email', 'user_status', 'avatar_id', 'user_infoid'],
             include: [{
                 model: File,
                 as: 'avatar',
                 attributes: ['name', 'path', 'url'],
+            },
+            {
+                model: UserInfos,
+                as: 'userinfo',
+                attributes: ['user_description', 'user_github','user_linkedin','user_site'],
             }]
         });
 

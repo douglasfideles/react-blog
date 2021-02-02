@@ -5,11 +5,13 @@ import BlogUser from '../app/models/BlogUser';
 import File from '../app/models/File';
 import BlogPosts from '../app/models/BlogPosts';
 import BlogCategories from '../app/models/BlogCategories';
+import UserInfos from '../app/models/UserInfos';
 
 
 //CONFIG DATABASE
 import databaseConfig from '../config/database';
-const models = [BlogUser, File, BlogPosts, BlogCategories];
+const models = [BlogUser, File, BlogPosts, BlogCategories, UserInfos];
+
 
 class Database {
 
@@ -36,6 +38,7 @@ class Database {
             'mongodb://192.168.99.100:27017/mongoblog',
             {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }
         )
+
     }
 
 }

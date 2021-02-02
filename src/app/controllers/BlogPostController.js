@@ -109,7 +109,7 @@ class BlogPostController{
     async delete(req, res){
 
         const post = await BlogPosts.findByPk(req.params.id);
-
+      
         if(post.post_author != req.userId){
 
             return res.status(401).json({error: "You don`t have permission to delete this post!"});
@@ -122,6 +122,22 @@ class BlogPostController{
 
         return res.json(post);
 
+
+    }
+
+    async update(req, res){
+
+        const update = req.body;
+        const blogPost = await BlogPosts.findByPk(req.params.id);
+        if(blogPost.post_author != req.userId){
+
+            return res.status(401).json({error: "You don`t have permission to alter this post!"});
+
+        }
+
+        await blogPost.update(update);
+
+        return res.json(blogPost);
 
     }
 

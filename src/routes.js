@@ -13,6 +13,8 @@ import FileController from './app/controllers/FileController';
 import CategoryController from './app/controllers/CategoryController';
 import BlogPostController from './app/controllers/BlogPostController';
 import NotificationController from './app/controllers/NotificationController';
+import UserInfoController from './app/controllers/UserInfoController';
+
 
 const upload = multer(multerConfig);
 const routes = new Router();
@@ -27,12 +29,17 @@ routes.put('/users', BlogUserController.update);
 
 routes.get('/blogusers', BlogUserController.index);
 
+routes.post('/userinfo', UserInfoController.store);
+routes.put('/userinfo/:id', UserInfoController.update);
+
+
 routes.post('/blogcategory', CategoryController.store);
 routes.get('/listblogcategory', CategoryController.index);
 
 routes.post('/blogpost', BlogPostController.store);
 routes.get('/blogpost', BlogPostController.index);
 routes.delete('/blogpost/:id', BlogPostController.delete);
+routes.put('/blogpost/:id', BlogPostController.update);
 
 routes.get('/notifications', NotificationController.index);
 routes.put('/notifications/:id', NotificationController.update);

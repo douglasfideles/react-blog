@@ -24,8 +24,10 @@ class BlogPosts extends Model{
     }
 
     static associate(models){
+
         this.belongsTo(models.BlogUser, {foreignKey: 'post_author', as: 'author_id'});
         this.belongsTo(models.BlogCategories, {foreignKey: 'post_category', as: 'categories_id'});
+        
     }
 
 }

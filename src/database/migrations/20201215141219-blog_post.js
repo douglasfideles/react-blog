@@ -55,6 +55,16 @@ module.exports = {
 
       },
 
+      users_meta: {
+
+        type: Sequelize.INTEGER,
+        references: {model: 'users_meta', key: 'id'},
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
+        allowNull: true,
+
+      },
+
       deleted_at: {
 
         type: Sequelize.DATE,
