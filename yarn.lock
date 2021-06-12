@@ -709,14 +709,6 @@ express-brute-redis@^0.0.1:
     redis "~0.10.0"
     underscore "~1.5.1"
 
-express-brute@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/express-brute/-/express-brute-1.0.1.tgz#9f36d107fe34e40a682593e39bffcc53102b5335"
-  integrity sha1-nzbRB/405ApoJZPjm//MUxArUzU=
-  dependencies:
-    long-timeout "~0.1.1"
-    underscore "~1.8.3"
-
 express-brute@~0.4.2:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/express-brute/-/express-brute-0.4.2.tgz#3bc34fb01252b8f47e737bf72dd01ff4df1d9c07"
@@ -1322,11 +1314,6 @@ lodash@^4.17.15, lodash@^4.17.20, lodash@^4.17.5:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
   integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
 
-long-timeout@~0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/long-timeout/-/long-timeout-0.1.1.tgz#9721d788b47e0bcb5a24c2e2bee1a0da55dab514"
-  integrity sha1-lyHXiLR+C8taJMLivuGg2lXatRQ=
-
 lowercase-keys@^1.0.0, lowercase-keys@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/lowercase-keys/-/lowercase-keys-1.0.1.tgz#6f9e30b47084d971a7c820ff15a6c5167b74c26f"
@@ -1502,11 +1489,6 @@ mongoose@^5.11.8:
     sift "7.0.1"
     sliced "1.0.1"
 
-mongose@^0.0.2-security:
-  version "0.0.2-security"
-  resolved "https://registry.yarnpkg.com/mongose/-/mongose-0.0.2-security.tgz#34640fa153c935371993ad8c0cc1a96f35f8be9b"
-  integrity sha512-XJUBQHhC/12+hWtrcB1Ww+gkxSzbxg4VdjpNlBQGvFoyPm1bErhA+3n/IkWbGCkavFB1OSycpvpCRphPsZXgLw==
-
 mpath@0.8.1:
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/mpath/-/mpath-0.8.1.tgz#f42bf00e162dfc8b4abcefaf114260233e6d3001"
@@ -1644,9 +1626,9 @@ normalize-path@^3.0.0, normalize-path@~3.0.0:
   integrity sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
 
 normalize-url@^4.1.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-4.5.0.tgz#453354087e6ca96957bd8f5baf753f5982142129"
-  integrity sha512-2s47yzUxdexf1OhyRi4Em83iQk0aPvwTddtFz4hnSSw9dCEsLEGf6SwIO8ss/19S9iBb5sJaOuTvTGDeZI00BQ==
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-4.5.1.tgz#0dd90cf1288ee1d1313b87081c9a5932ee48518a"
+  integrity sha512-9UZCFRHQdNrfTpGg8+1INIg93B6zE0aXMVFkw1WFwvO4SlZywU6aLg5Of0Ap/PgcbSw4LNxvMWXMeugwMCX0AA==
 
 object-assign@^4, object-assign@^4.0.1, object-assign@^4.1.1:
   version "4.1.1"
@@ -2522,11 +2504,6 @@ underscore@~1.5.1:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.5.2.tgz#1335c5e4f5e6d33bbb4b006ba8c86a00f556de08"
   integrity sha1-EzXF5PXm0zu7SwBrqMhqAPVW3gg=
-
-underscore@~1.8.3:
-  version "1.8.3"
-  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.8.3.tgz#4f3fb53b106e6097fcf9cb4109f2a5e9bdfa5022"
-  integrity sha1-Tz+1OxBuYJf8+ctBCfKl6b36UCI=
 
 unique-string@^2.0.0:
   version "2.0.0"
