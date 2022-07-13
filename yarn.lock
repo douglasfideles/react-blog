@@ -526,10 +526,10 @@ define-properties@^1.1.3:
   dependencies:
     object-keys "^1.0.12"
 
-denque@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/denque/-/denque-1.4.1.tgz#6744ff7641c148c3f8a69c307e51235c1f4a37cf"
-  integrity sha512-OfzPuSZKGcgr96rf1oODnfjqBFmr1DVoc/TrItj3Ohe0Ah1C5WX5Baquw/9U9KovnQ88EqmJbD66rKYUQYN1tQ==
+denque@^1.4.1, denque@^1.5.0:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/denque/-/denque-1.5.1.tgz#07f670e29c9a78f8faecb2566a1e2c11929c5cbf"
+  integrity sha512-XwE+iZ4D6ZUB7mfYRMb5wByE8L74HCn30FBN7sWnXksWc1LO1bPDl67pBR9o/kC4z/xSNAwkMYcGgqDV3BE3Hw==
 
 depd@~1.1.2:
   version "1.1.2"
@@ -708,14 +708,6 @@ express-brute-redis@^0.0.1:
     express-brute "~0.4.2"
     redis "~0.10.0"
     underscore "~1.5.1"
-
-express-brute@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/express-brute/-/express-brute-1.0.1.tgz#9f36d107fe34e40a682593e39bffcc53102b5335"
-  integrity sha1-nzbRB/405ApoJZPjm//MUxArUzU=
-  dependencies:
-    long-timeout "~0.1.1"
-    underscore "~1.8.3"
 
 express-brute@~0.4.2:
   version "0.4.2"
@@ -1322,11 +1314,6 @@ lodash@^4.17.15, lodash@^4.17.20, lodash@^4.17.5:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
   integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
 
-long-timeout@~0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/long-timeout/-/long-timeout-0.1.1.tgz#9721d788b47e0bcb5a24c2e2bee1a0da55dab514"
-  integrity sha1-lyHXiLR+C8taJMLivuGg2lXatRQ=
-
 lowercase-keys@^1.0.0, lowercase-keys@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/lowercase-keys/-/lowercase-keys-1.0.1.tgz#6f9e30b47084d971a7c820ff15a6c5167b74c26f"
@@ -1501,11 +1488,6 @@ mongoose@^5.11.8:
     safe-buffer "5.2.1"
     sift "7.0.1"
     sliced "1.0.1"
-
-mongose@^0.0.2-security:
-  version "0.0.2-security"
-  resolved "https://registry.yarnpkg.com/mongose/-/mongose-0.0.2-security.tgz#34640fa153c935371993ad8c0cc1a96f35f8be9b"
-  integrity sha512-XJUBQHhC/12+hWtrcB1Ww+gkxSzbxg4VdjpNlBQGvFoyPm1bErhA+3n/IkWbGCkavFB1OSycpvpCRphPsZXgLw==
 
 mpath@0.8.1:
   version "0.8.1"
@@ -1994,10 +1976,10 @@ readdirp@~3.5.0:
   dependencies:
     picomatch "^2.2.1"
 
-redis-commands@^1.2.0, redis-commands@^1.5.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/redis-commands/-/redis-commands-1.6.0.tgz#36d4ca42ae9ed29815cdb30ad9f97982eba1ce23"
-  integrity sha512-2jnZ0IkjZxvguITjFTrGiLyzQZcTvaw8DAaCXxZq/dsHXz7KfMQ3OUJy7Tz9vnRtZRVz6VRCPDvruvU8Ts44wQ==
+redis-commands@^1.2.0, redis-commands@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/redis-commands/-/redis-commands-1.7.0.tgz#15a6fea2d58281e27b1cd1acfb4b293e278c3a89"
+  integrity sha512-nJWqw3bTFy21hX/CPKHth6sfhZbdiHP6bTawSgQBlKOVRG7EZkfHbbHwQJnrE4vsQf0CMNE+3gJ4Fmm16vdVlQ==
 
 redis-errors@^1.0.0, redis-errors@^1.2.0:
   version "1.2.0"
@@ -2025,13 +2007,13 @@ redis@^2.7.1:
     redis-commands "^1.2.0"
     redis-parser "^2.6.0"
 
-redis@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/redis/-/redis-3.0.2.tgz#bd47067b8a4a3e6a2e556e57f71cc82c7360150a"
-  integrity sha512-PNhLCrjU6vKVuMOyFu7oSP296mwBkcE6lrAjruBYG5LgdSqtRBoVQIylrMyVZD/lkF24RSNNatzvYag6HRBHjQ==
+redis@^3.0.2, redis@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/redis/-/redis-3.1.1.tgz#a44bee7c072dcf685e139048d6a1a4d3b00f5d01"
+  integrity sha512-QhkKhOuzhogR1NDJfBD34TQJz2ZJwDhhIC6ZmvpftlmfYShHHQXjjNspAJ+Z2HH5NwSBVYBVganbiZ8bgFMHjg==
   dependencies:
-    denque "^1.4.1"
-    redis-commands "^1.5.0"
+    denque "^1.5.0"
+    redis-commands "^1.7.0"
     redis-errors "^1.2.0"
     redis-parser "^3.0.0"
 
@@ -2522,11 +2504,6 @@ underscore@~1.5.1:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.5.2.tgz#1335c5e4f5e6d33bbb4b006ba8c86a00f556de08"
   integrity sha1-EzXF5PXm0zu7SwBrqMhqAPVW3gg=
-
-underscore@~1.8.3:
-  version "1.8.3"
-  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.8.3.tgz#4f3fb53b106e6097fcf9cb4109f2a5e9bdfa5022"
-  integrity sha1-Tz+1OxBuYJf8+ctBCfKl6b36UCI=
 
 unique-string@^2.0.0:
   version "2.0.0"
